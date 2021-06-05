@@ -1,11 +1,16 @@
 const pointCollector = () => {
     setTimeout(() => {
         const element = document.querySelector('[aria-label="Claim Bonus"]');
-        element.click();
+        
+        if (element) {
+            element.click();
+        }
 
         setInterval(() => {
             const element = document.querySelector('[aria-label="Claim Bonus"]');
-            element.click();
+            if (element) {
+                element.click();
+            }
         }, 15 * 61 * 1000);
 
     }, 5 * 1000);

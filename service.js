@@ -1,7 +1,5 @@
-chrome.runtime.onInstalled.addListener(() => {
-    console.log("Installed");
-});
-
-chrome.runtime.onStartup.addListener(() => {
-    console.log("Startup!!!")
-});
+chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
+    if (changeInfo.status === 'complete') {        
+        chrome.tabs.sendMessage(tabId, {text: 'collect points'});
+    }
+})

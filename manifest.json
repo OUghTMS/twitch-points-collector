@@ -5,5 +5,10 @@
     "manifest_version": 3,
     "background": {
         "service_worker": "service.js"
-    }
+    },
+    "content_scripts": [{
+        "matches": ["https://www.twitch.tv/*"],
+        "js": ["content.js"]
+    }],
+    "permissions": ["activeTab"]
 }
